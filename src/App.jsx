@@ -26,6 +26,7 @@ function App() {
         <Route path="/favorite" element={<Favorites/>}/>
         <Route path="/about" element={<About/>}/>
       </Routes>
+      <Footer />
     </BrowserRouter>
     </GlobalProvider>
   );

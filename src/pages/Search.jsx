@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
+import { Link } from "react-router-dom";
+
 
 export const Search = () => {
   const [search, setSearch] = useState("");
@@ -46,6 +48,13 @@ export const Search = () => {
 
   return (
     <div>
+        <div className="back-button">
+        <Link to="/">
+          <button type="button" className="btn btn-info">
+            Back to Movies
+          </button>
+        </Link>
+      </div>
       <h1>Search</h1>
       <div className="search-container">
         <input

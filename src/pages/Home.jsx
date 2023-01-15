@@ -41,7 +41,7 @@ export const Home = () => {
           <ul>
             {movieList.map((movie, index) => (
               <li key={index}>
-                <MovieCard movie={movie} />
+                <MovieCard movie={movie}/>
               </li>
             ))}
           </ul>
