@@ -1,46 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard";
 
 export const Home = () => {
-  const [searchString, setSearchString] = useState("");
-  const [movieData, setMovieData] = useState([]);
+  const [filter, setFilter] = useState("popular");
   const [movieList, setMovieList] = useState([]);
 
   const onChange = (e) => {
+    setFilter(e.target.value);
     e.preventDefault();
-    setSearchString(e.target.value);
+    console.log("filtering");
+  };
+
+  useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${
+      `https://api.themoviedb.org/3/movie/${filter}?api_key=${
         import.meta.env.VITE_REACT_APP_API_KEY
-      }&language=en-US&page=1&include_adult=false&query=${e.target.value}`
+      }&language=en-US&page=1&region=US%7CCA`
     )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (!data.errors) {
-          setMovieList(data.results);
-        } else {
-          setMovieList([]);
+        {
+          setMovieList(data.results.slice(0, 12));
         }
       });
-  };
+  }, [filter]);
 
   return (
     <div className="page-wrapper">
       <div className="page-content">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchString}
-            onChange={onChange}
-          />
+        <div className="filter-select">
+          <select onChange={onChange}>
+            <option value="popular">Popular</option>
+            <option value="now_playing">Now Playing</option>
+            <option value="top_rated">Top Rated</option>
+            <option value="upcoming">Upcoming</option>
+          </select>
         </div>
         <div className="movie-list">
           <ul>
             {movieList.map((movie, index) => (
               <li key={index}>
-                <MovieCard movie={movie}/>
+                <MovieCard movie={movie} />
               </li>
             ))}
           </ul>

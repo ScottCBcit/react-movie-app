@@ -4,23 +4,26 @@ import posterPlaceholder from "../assets/images/posterPlaceholder.png";
 import { GlobalContext } from "../context/GlobalContext";
 
 export const MovieCard = ({ movie }) => {
-  
-  const {watchList, favoriteList} = useContext(GlobalContext);
-  const { addMovieToFavoriteList, removeMovieFromFavoriteList, addMovieToWatchList, removeMovieFromWatchList } = useContext(GlobalContext);
+  const { watchList, favoriteList } = useContext(GlobalContext);
+  const {
+    addMovieToFavoriteList,
+    removeMovieFromFavoriteList,
+    addMovieToWatchList,
+    removeMovieFromWatchList,
+  } = useContext(GlobalContext);
 
   const isFavorite = favoriteList.find((m) => m.id === movie.id);
   const isWatchList = watchList.find((m) => m.id === movie.id);
 
   function isMovieInWatchList(movie) {
     var watchMovie = watchList.find((m) => m.id === movie.id);
-    return watchMovie ? watchMovie : {id: 0};
+    return watchMovie ? watchMovie : { id: 0 };
   }
 
   function isMovieInFavoriteList(movie) {
     var favMovie = favoriteList.find((m) => m.id === movie.id);
-    return favMovie ? favMovie : {id: 0};
+    return favMovie ? favMovie : { id: 0 };
   }
-
 
   const handleFavoriteClick = (movie) => {
     if (isFavorite) {
@@ -29,9 +32,9 @@ export const MovieCard = ({ movie }) => {
       addMovieToFavoriteList(movie);
     }
   };
-  
+
   const handleWatchListClick = (movie) => {
-    console.log(watchList)
+    console.log(watchList);
     if (isWatchList) {
       removeMovieFromWatchList(movie.id);
     } else {
@@ -44,11 +47,13 @@ export const MovieCard = ({ movie }) => {
       <div className="poster-wrapper">
         {/* // if movie poster is null, display a default image */}
         {movie.poster_path ? (
-          <img
-            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-            alt={`${movie.title} Poster`}
-            className="poster"
-          />
+          <a href={`/details/${movie.id}`}>
+            <img
+              src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+              alt={`${movie.title} Poster`}
+              className="poster"
+            />
+          </a>
         ) : (
           <img
             src={posterPlaceholder}
@@ -68,20 +73,32 @@ export const MovieCard = ({ movie }) => {
         </div>
         <div className="movie-options">
           {isMovieInFavoriteList(movie).id == movie.id ? (
-            <button className="btn btn-danger" onClick={() => handleFavoriteClick(movie)}>
+            <button
+              className="btn btn-danger"
+              onClick={() => handleFavoriteClick(movie)}
+            >
               Remove from Favorites
             </button>
           ) : (
-            <button className="btn btn-primary" onClick={() => handleFavoriteClick(movie)}>
+            <button
+              className="btn btn-primary"
+              onClick={() => handleFavoriteClick(movie)}
+            >
               Add to Favorites
             </button>
           )}
           {isMovieInWatchList(movie).id == movie.id ? (
-            <button className="btn btn-danger" onClick={() => handleWatchListClick(movie)}>
+            <button
+              className="btn btn-danger"
+              onClick={() => handleWatchListClick(movie)}
+            >
               Remove from WatchList
             </button>
           ) : (
-            <button className="btn btn-primary" onClick={() => handleWatchListClick(movie)}>
+            <button
+              className="btn btn-primary"
+              onClick={() => handleWatchListClick(movie)}
+            >
               Add to WatchList
             </button>
           )}
