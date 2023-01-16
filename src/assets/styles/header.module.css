@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.headerContainer {
+  background-color: #0e131F;
+  padding: 1rem;
+    font-family: 'Catamaran', sans-serif;
+    width: 100%;
+    
+}
+.innerHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.logo img {
+  width: 7rem;
+}
+.logo {
+  margin-right: 1rem;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 0.5em #8B939C);
+}
+.navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-right: 3rem;
+}
+.navLinks li {
+  margin-left: 1rem;
+}
+.navLinks li a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #8B939C;
+}
+.navLinks li a:hover {
+  color: #F8F272;
+  filter: drop-shadow(0 0 2em #F8F272);
+}
+.navLinks li a.active {
+  color: #F8F272;
+  filter: drop-shadow(0 0 2em #F8F272);
+}
+
+
+
+
+

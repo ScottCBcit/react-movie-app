@@ -1,16 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import styles from '../assets/styles/header.module.css'
+import logo from '../assets/images/logo-no-background.png'
 
 
 export const Header = () => {
   return (
     <header>
-        <div className="header-container">
-            <div className="inner-header">
-                <div className="logo">
-                    <Link to="/">Movie App</Link>
+        <div className={styles.headerContainer}>
+            <div className={styles.innerHeaderContainer}>
+                <div className={styles.logo}>
+                <Link to="/"><img src={logo} alt={"Final Take Logo"} /></Link>
                 </div>
-                <ul className='nav-links'>
+                <ul className={styles.navLinks}>
                     <li>
                         <Link to="/">Home</Link>
                     </li>

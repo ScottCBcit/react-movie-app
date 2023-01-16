@@ -2,20 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
 import { Link } from "react-router-dom";
-
+import styles from "../assets/styles/search.module.css";
 
 export const Search = () => {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
   //Nice To Haves
   // pagination
-    const [page, setPage] = useState(1);
-    // loading
-    const [loading, setLoading] = useState(true);
-    // error
-    const [error, setError] = useState(false);
-    
-
+  const [page, setPage] = useState(1);
+  // loading
+  const [loading, setLoading] = useState(true);
+  // error
+  const [error, setError] = useState(false);
 
   const onSubmit = (e) => {
     if (e.key === "Enter") {
@@ -47,29 +45,33 @@ export const Search = () => {
   }, [search]);
 
   return (
-    <div>
-        <div className="back-button">
-        <Link to="/">
-          <button type="button" className="btn btn-info">
-            Back to Movies
-          </button>
-        </Link>
-      </div>
-      <h1>Search</h1>
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search for a movie"
-          onChange={onSubmit}
-          value={search}
-        />
-      </div>
-      <div className="clear-button">
-        <button onClick={clearSearch}>Clear Search</button>
-      </div>
+    <div className={styles.pageWrapper}>
+      <div className={styles.searchFunctions}>
+        <div className={styles.backButton}>
+          <Link to="/">
+            <button type="button" className="btn btn-info">
+              Back to Movies
+            </button>
+          </Link>
+        </div>
 
+        <div className={styles.searchContainer}>
+          <div className={styles.searchBar}>
+          <h1>Search:</h1>
+          <input
+            type="text"
+            placeholder="Search for a movie"
+            onChange={onSubmit}
+            value={search}
+          />
+          </div>
+          <div className="clear-button">
+            <button onClick={clearSearch}>Clear Search</button>
+          </div>
+        </div>
+      </div>
       <div className="movie-grid">
-        <div className="movie-list">
+        <div className={styles.movieList}>
           <ul>
             {movies.map((movie, index) => (
               <li key={index}>

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+h3{
+    color: #8B939C;
+    font-size: 2rem;
+    margin: 1rem;
+}
+h4{
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+p{
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.movieCardWrapper{
+    font-family: 'Catamaran', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #38405F;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    width: 30rem;
+    height: 100%;
+    box-shadow: 10px 10px 20px #8B939C;
+    transition: 0.5s ease-in-out;
+}
+
+.movieCardWrapper:hover{
+    box-shadow: 0 0 2em #F8F272;
+    scale: 1.05;
+}
+
+
+.movieCardWrapper img{
+    width: 50%;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px #0E131F;
+    transition: 0.5s ease-in-out;
+}
+.movieCardWrapper:hover img {
+    scale: 1.05;
+}
+
+.ratings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+}
+.ratings p{
+    font-size: 30px;
+}
+
+
+.movieOptions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem;
+    background: #60667f;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    background-color: #8B939C;
+    box-shadow: 2px 2px 5px #0E131F;
+  }
+
+  button:hover {
+    border-color: #0E131F;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }

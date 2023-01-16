@@ -1,0 +1,84 @@
+.pageWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    background-color: #0e131F;
+    color: #8B939C;
+    padding: 0;
+}
+
+
+.pageContent{
+    width: 100%;
+    max-width: 1200px;
+    
+}
+
+.movieList ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+}
+
+.movieList li{
+    height: 100%;
+    background-color: #0e131F;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 512px;
+}
+
+.searchFunctions{
+
+    display: flex;
+    
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-top: 3rem;
+}
+
+.searchContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+.searchContainer input{
+    background-color: #8B939C;
+    color: #0e131F;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: none;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.backButton{
+    background-color: #0e131F;
+    color: #8B939C;
+    font-size: 1.5rem;
+    border: none;
+    align-items: center;
+    width: 100%;
+}
+

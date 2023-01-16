@@ -1,0 +1,41 @@
+.favListWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    background-color: #0e131F;
+    color: #8B939C;
+    padding: 0;
+}
+
+.favListWrapper ul{
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+}
+
+.favListWrapper h1{
+    font-size: 2rem;
+    color: #8B939C;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+.favListWrapper li{
+    list-style: none;
+}
+
+.favListHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

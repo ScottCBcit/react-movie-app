@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard";
-
+import styles from "../assets/styles/home.module.css";
 export const Home = () => {
   const [filter, setFilter] = useState("popular");
   const [movieList, setMovieList] = useState([]);
@@ -27,9 +27,9 @@ export const Home = () => {
   }, [filter]);
 
   return (
-    <div className="page-wrapper">
-      <div className="page-content">
-        <div className="filter-select">
+    <div className={styles.pageWrapper}>
+      <div className={styles.filterSelect}>
+          <label htmlFor="filter">Filter By:</label>
           <select onChange={onChange}>
             <option value="popular">Popular</option>
             <option value="now_playing">Now Playing</option>
@@ -37,7 +37,8 @@ export const Home = () => {
             <option value="upcoming">Upcoming</option>
           </select>
         </div>
-        <div className="movie-list">
+      <div className={styles.pageContent}>
+        <div className={styles.movieList}>
           <ul>
             {movieList.map((movie, index) => (
               <li key={index}>

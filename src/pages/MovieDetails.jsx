@@ -85,7 +85,7 @@ export const MovieDetails = () => {
           )}
         </div>
         <div className="rating">
-            <h3>Rating: {Math.round(movie?.vote_average * 10) / 10}</h3>
+            <h3>Rating: {Math.round(movie?.vote_average * 10)}%</h3>
         </div>
         <div className="summary">
             <h3>Summary</h3>

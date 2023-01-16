@@ -2,8 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import posterPlaceholder from "../assets/images/posterPlaceholder.png";
 import { GlobalContext } from "../context/GlobalContext";
+import styles from "../assets/styles/movieCard.module.css";
 
 export const MovieCard = ({ movie, page }) => {
+
   const { watchList, favoriteList } = useContext(GlobalContext);
   const {
     addMovieToFavoriteList,
@@ -40,7 +42,7 @@ const handleWatchListClick = (movie) => {
 };
 
   return (
-    <div className="movie-card-wrapper">
+    <div className={styles.movieCardWrapper}>
       <a href={`/details/${movie.id}`}>
         <div className="movie-card">
           <div className="poster-wrapper">
@@ -71,20 +73,14 @@ const handleWatchListClick = (movie) => {
               <h3>Overview</h3>
               <p>{movie.overview}</p>
             </div>
-            <div className="ratings">
-              {isMovieInFavoriteList(movie) || isMovieInWatchList(movie) ? (
-                <div className="rating">
-                  <h3>Rating</h3>
-                  <p>{movie.vote_average}</p>
-                </div>
-              ) : (
-                <></>
-              )}
+            <div className={styles.ratings}>
+                  <h3>Rating:</h3>
+                  <p>{movie.vote_average * 10}%</p>
             </div>
           </div>
         </div>
       </a>
-      <div className="movie-options">
+      <div className={styles.movieOptions}>
       {isMovieInFavoriteList(movie) ? (
             <button
               className="btn btn-danger"

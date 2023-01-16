@@ -4,7 +4,11 @@ import { Route } from 'react-router-dom'
 export const Footer = () => {
   return (
     <>
-        <div>Footer</div>
+        <div>
+          <h1>
+            
+          </h1>
+        </div>
     </>
 
   )
