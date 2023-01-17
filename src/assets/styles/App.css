@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.App{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Catamaran', sans-serif;
+    text-decoration: none;
+}
+
+html{
+ background: #0E131F;
+ min-height: 100vh;
+}
+
+.footer{
+
+    margin-top: auto;
+}
+
+.content{
+    min-height: calc(100vh - 100px);
+}
+

@@ -13,7 +13,7 @@ export const Favorites = () => {
     <div className={styles.favListWrapper}>
       <div className="movie-grid">
       <div className={styles.favListHeader}>
-      <h1>WatchList</h1>
+      <h1>Favorites</h1>
       <div className="back-button">
         <Link to="/">
           <button type="button" className="btn btn-info">
@@ -25,8 +25,7 @@ export const Favorites = () => {
         <div className="movie-list">
           {favoriteList.length === 0 && (
             <h2>
-              Sorry you have no movies in your watchlist. Return to the home or
-              search page to add a movie to your watchlist.
+              Sorry you have no movies in your Favorites. Return to the home or search page to add to your favorites!.
             </h2>
           )}
           <ul>

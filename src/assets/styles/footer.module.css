@@ -1,0 +1,20 @@
+.footerWrapper {
+    margin: auto;
+    align-content: bottom;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    width:100%;
+}
+
+
+
+.footerLogo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0;
+}

@@ -6,8 +6,16 @@
   padding: 1rem;
     font-family: 'Catamaran', sans-serif;
     width: 100%;
-    
 }
+
+.headerContainer label{
+  color: #8B939C;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 1000;
+}
+
 .innerHeaderContainer {
     display: flex;
     align-items: center;
